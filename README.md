@@ -1,20 +1,21 @@
 # Arduino IDE Framework
 Helper libs for quick development. 
 
-## How to use?
-1. Create new arduino project in Arduino IDE.
-2. Add new tab: Click arrow on the rights side and choose Add new tab. You can also use shortcut Ctrl+Shift+N instead of searcing this menu.
-3. Copy paste content of the file and name it same as it is in this solution.
-4. Repeat this for each file.
+## How to add files?
+1. Create new Arduino project in Arduino IDE.
+2. Add new tab: Click arrow on the right side of tabs panel and choose Add new tab. You can also use shortcut Ctrl+Shift+N instead of searching this menu.
+3. Choose one of titles bellow
+4. Copy paste content of the file and name as it is in soltion
+5. Repeat this for each file.
 
 ## Delayed functions
-Delayed functions make multitasking environment very siple. They are very similar to Javascript setTimeout funtion. 
-You do not need to worry about critical sections, context switching, complex main loops,... All you need to know is how often you need to exectute some funtion.
+Delayed functions make multitasking environment very simple. They are very similar to Javascript setTimeout funtion. 
+You do not need to worry about critical sections, context switching, complex main loops,... All you need to know is how often you need to execute the function.
 
-1. Add folowing files into your project:
+1. Add following files into your project:
   - delayedFunction.h
   - delayedFunction.cpp
-2. Include delayedFunction.h in your project:
+2. Include delayedFunction.h in your main ino project file:
   ```cpp
   #include "delayedFunction.h"
   void setup() 
@@ -27,7 +28,7 @@ You do not need to worry about critical sections, context switching, complex mai
   // put your main code here, to run repeatedly:
   }
   ```
-3. Add execDelayFunction() into main loop. So it will execute functions:
+3. Add execDelayFunction() into the main loop. So it will execute functions:
   ```cpp
   #include "delayedFunction.h"
   void setup() 
@@ -69,11 +70,11 @@ You do not need to worry about critical sections, context switching, complex mai
     execDelayFunction()
   }
   ```
-5. Add delay function 
+5. Add addDelayFunction calls: 
   ```cpp
   #include "delayedFunction.h"
   
-  // internal state of light It is initaly off 
+  // internal state of light It is initially off 
   bool pinState = LOW; 
   
   // toggles light (switches light on or off).
@@ -103,7 +104,7 @@ You do not need to worry about critical sections, context switching, complex mai
     ```cpp
   #include "delayedFunction.h"
   
-  // internal state of light It is initaly off 
+  // internal state of light It is initially off 
   bool pinState = LOW; 
   
   // toggles light (switches light on or off).
@@ -145,12 +146,12 @@ You do not need to worry about critical sections, context switching, complex mai
   
   If you want function to stop executing you can use removeDelayFunction.
   
-  You can execute up to 15 functions. This can be controled in addDelayFunction.h:
+  You can execute up to 15 functions. This can be controlled in addDelayFunction.h:
   ```cpp
   #define delayFunctionMemSize 15
   ```
   You can lower this value to save memory. Each function spends 1 char + 1 int + 2 pointers = 7 bytes or more
   
-  There is no addRepeatingDelayFunction yet which will have even more efficient code.
+  There is no addRepeatingDelayFunction yet which would make code even simpler.
   But it would occupy one more int*2 or 4 bytes) of space.
   
