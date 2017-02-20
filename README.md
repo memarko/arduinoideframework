@@ -1,4 +1,4 @@
-# Arduino IDE Framework
+# My Arduino IDE Framework
 Helper libs for quick development. 
 
 ## How to add files?
