@@ -153,5 +153,5 @@ You do not need to worry about critical sections, context switching, complex mai
   You can lower this value to save memory. Each function spends 1 char + 1 int + 2 pointers = 7 bytes or more
   
   There is no addRepeatingDelayFunction yet which would make code even simpler.
-  But it would occupy one more int*2 or 4 bytes) of space.
+  But it would occupy one more int(2 or 4 bytes) of space.
   
